@@ -1,5 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo {
+  width: 80px;
+}
+.basketLogo {
+  width: 80px;
+}
+.navbar {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(49, 40, 40);
+  box-shadow: 0 0 1.5rem 0 rgb(56, 39, 39)
+}
+.navbarLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }

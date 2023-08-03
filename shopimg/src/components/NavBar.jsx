@@ -1,7 +1,9 @@
 
 const NavBar = () => {
   return (
-    <div>NavBar</div>
+    <div>
+      <img src="" alt="" />
+    </div>
   )
 }
 

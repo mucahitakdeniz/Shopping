@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 const CategoryBar = () => {
   const [categorys, setSetCategotys] = useState(["all"]);
+  const [selectedindex, setSelectedIndex] = useState("");
   const postCategory = async () => {
     try {
       const { data } = await axios(
@@ -14,6 +15,10 @@ const CategoryBar = () => {
       console.log(error);
     }
   };
+  const handleClick = (i) => {
+    console.log(categorys[i]);
+    setSelectedIndex(i)
+  };
   useEffect(() => {
     postCategory();
     console.log(categorys);
@@ -21,8 +26,14 @@ const CategoryBar = () => {
 
   return (
     <div className="categoryBar">
-      {categorys.map((btn) => (
-        <button>{btn.toLocaleUpperCase()}</button>
+      {categorys.map((btn, i) => (
+        <button
+          key={i}
+          onClick={() => handleClick(i)}
+          style={{  color: i === selectedindex ? "red" : "black" }}
+        >
+          {btn.toLocaleUpperCase()}
+        </button>
       ))}
     </div>
   );

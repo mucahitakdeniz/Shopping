@@ -12,15 +12,29 @@
 .navbar {
   width: 100%;
   padding: 1.2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgb(49, 40, 40);
-  box-shadow: 0 0 1.5rem 0 rgb(56, 39, 39)
+  box-shadow: 0 0 1.5rem 0 rgb(56, 39, 39);
 }
 .navbarLeft {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.categoryBar {
+  width: 100%;
+  height: 5rem;
+  padding: 1 rem;
+  gap: 1rem;
+  display: flex;
+}
+.categoryBar button {
+  margin: auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
 }

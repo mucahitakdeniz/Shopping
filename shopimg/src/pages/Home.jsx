@@ -1,7 +1,10 @@
+import CategoryBar from "../components/CategoryBar"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <CategoryBar/>
+    </div>
   )
 }
 

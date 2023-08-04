@@ -5,7 +5,7 @@ import baskeAdd from "../assets/basket-add.png";
 const ProductCard = ({ filt }) => {
   useEffect(() => {
     postProducts();
-  }, []);
+  }, [filt]);
   const [products, setProducts] = useState([]);
 
   const postProducts = async () => {
@@ -26,15 +26,17 @@ const ProductCard = ({ filt }) => {
         .map((data) => (
           <div className="Cards">
             <img src={data?.image} alt="" />
-            <div className="priceDiv">
-              <p>{data.title}</p>
-              <p>{data.price}</p>
-            </div>
-            <div className="basketDiv">
-              <p>{data.category}</p>{" "}
-              <button>
-                <img className="basketAdd" src={baskeAdd} alt="" />
-              </button>
+            <div className="info">
+              <div className="priceDiv">
+                <div className="title">{data.title}</div>
+                <div>{data.price} $</div>
+              </div>
+              <div className="basketDiv">
+                <div>{data.category}</div>
+                <button>
+                  <img className="basketAdd" src={baskeAdd} alt="" />
+                </button>
+              </div>
             </div>
           </div>
         ))}

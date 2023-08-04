@@ -3,7 +3,7 @@ import CategoryBar from "../components/CategoryBar"
 import ProductCard from "../components/ProductCard"
 
 const Home = () => {
-  const [filt, setFilt] = useState("all")
+  const [filt, setFilt] = useState("")
   return (
     <div>
       <CategoryBar setFilt={setFilt} />

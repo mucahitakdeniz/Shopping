@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 const CategoryBar = () => {
   const [categorys, setSetCategotys] = useState(["all"]);
-  const [selectedindex, setSelectedIndex] = useState("");
+  const [selectedindex, setSelectedIndex] = useState(0);
   const postCategory = async () => {
     try {
       const { data } = await axios(
         "https://fakestoreapi.com/products/categories"
       );
-      setSetCategotys([...categorys, ...data]);
+      setSetCategotys(["all", ...data]);
       console.log(categorys);
     } catch (error) {
       console.log(error);
@@ -17,7 +17,7 @@ const CategoryBar = () => {
   };
   const handleClick = (i) => {
     console.log(categorys[i]);
-    setSelectedIndex(i)
+    setSelectedIndex(i);
   };
   useEffect(() => {
     postCategory();
@@ -27,13 +27,18 @@ const CategoryBar = () => {
   return (
     <div className="categoryBar">
       {categorys.map((btn, i) => (
-        <button
-          key={i}
-          onClick={() => handleClick(i)}
-          style={{  color: i === selectedindex ? "red" : "black" }}
-        >
-          {btn.toLocaleUpperCase()}
-        </button>
+        <div key={i}>
+          <button
+            onClick={() => handleClick(i)}
+            style={{ color: i === selectedindex ? "red" : "black" }}
+          >
+            <input
+              type="checkbox" className="checkBox"
+              checked={i === selectedindex ? "checked" : false}
+            />
+            {btn.toLocaleUpperCase()}
+          </button>
+        </div>
       ))}
     </div>
   );

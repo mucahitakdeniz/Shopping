@@ -43,3 +43,19 @@
   width: 1rem;
   height: 1rem;
 }
+.container {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.Cards {
+  width: 400px;
+  gap: 1rem;
+  margin: 0.5rem;
+  border-bottom: 1px solid grey;
+  & img {
+    width: 300px;
+    height: 400px;
+  }
+}

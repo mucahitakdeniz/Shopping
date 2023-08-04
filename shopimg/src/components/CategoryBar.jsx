@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const CategoryBar = ({ setFilt }) => {
   const [categorys, setSetCategotys] = useState(["all"]);
   const [selectedindex, setSelectedIndex] = useState(0);
   const postCategory = async () => {
+    
     try {
       const { data } = await axios(
         "https://fakestoreapi.com/products/categories"

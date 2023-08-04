@@ -1,8 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import baskeAdd from "../assets/basket-add.png";
+import { ShopContext } from "../context/ShopContext";
 
 const ProductCard = ({ filt }) => {
+  const { setBasket } = useContext(ShopContext);
+
   useEffect(() => {
     postProducts();
   }, [filt]);
@@ -15,6 +18,7 @@ const ProductCard = ({ filt }) => {
       console.log(products);
     } catch (error) {
       console.log(error);
+      
     }
   };
 

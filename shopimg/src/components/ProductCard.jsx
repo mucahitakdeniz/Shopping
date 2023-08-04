@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import baskeAdd from "../assets/basket-add.png";
 
 const ProductCard = ({ filt }) => {
   useEffect(() => {
@@ -20,18 +21,23 @@ const ProductCard = ({ filt }) => {
   console.log(filt);
   return (
     <div className="container">
-      {products.filter(e => filt ? e.category===filt : e ).map((data) => (
-        <div className="Cards">
-          <img src={data?.image} alt="" />
-          <div className="priceDiv">
-            <p>{data.title}</p>
-            <p>{data.price}</p>
+      {products
+        .filter((e) => (filt ? e.category === filt : e))
+        .map((data) => (
+          <div className="Cards">
+            <img src={data?.image} alt="" />
+            <div className="priceDiv">
+              <p>{data.title}</p>
+              <p>{data.price}</p>
+            </div>
+            <div className="basketDiv">
+              <p>{data.category}</p>{" "}
+              <button>
+                <img className="basketAdd" src={baskeAdd} alt="" />
+              </button>
+            </div>
           </div>
-          <div className="basketDiv">
-            <p>{data.category}</p> <button>SEPETE EKLE</button>
-          </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

@@ -20,7 +20,7 @@ const ProductCard = ({ filt }) => {
   console.log(filt);
   return (
     <div className="container">
-      {products.map((data) => (
+      {products.filter(e => filt ? e.category===filt : e ).map((data) => (
         <div className="Cards">
           <img src={data?.image} alt="" />
           <div className="priceDiv">
